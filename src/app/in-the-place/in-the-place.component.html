@@ -1,0 +1,21 @@
+<section class="flex flex-col max-w-full">
+    <week-banner [weekNumber]="weekId" [year]="year" (weekChange)="changeWeek($event)"></week-banner>
+    <p-table [value]="people" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+            <!-- {{dateNow | date:'dd'}} -->
+            @for (day of weekDays; track day) {
+                <th>{{ day }}</th>
+              } 
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-employee>
+          <tr>
+              <td>{{ employee }}</td>
+              <td>TT / TT</td>
+              <!-- <td>{{ product.category }}</td>
+              <td>{{ product.quantity }}</td> -->
+          </tr>
+      </ng-template>
+  </p-table>
+</section>
